@@ -5,11 +5,11 @@
 
         <ul>
             <li :key="product.id" v-for="product in products">
-                {{product.title}} - {{product.price}} - {{product.quantity}}
+                {{product.title}} - {{product.price | currency}} - {{product.quantity}}
             </li>
         </ul>
 
-        <p>Total: {{</p>
+        <p>Total: {{ total | currency}}</p>
     </div>
 </template>
 

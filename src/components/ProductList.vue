@@ -6,7 +6,7 @@
 
         <ul v-else>
             <li :key="product.id" v-for="product in products">
-                {{product.title}} - {{product.price}}
+                {{product.title}} - {{product.price | currency }}
 
                 <button @click="addProductToCart(product)">Add to cart</button>
                 
