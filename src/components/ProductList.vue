@@ -8,7 +8,9 @@
             <li :key="product.id" v-for="product in products">
                 {{product.title}} - {{product.price | currency }}
 
-                <button @click="addProductToCart(product)">Add to cart</button>
+                <button 
+                :disabled="!product.inventory > 0"
+                @click="addProductToCart(product)">Add to cart</button>
                 
             </li>
         </ul>
@@ -28,7 +30,7 @@ export default {
 
     computed: {
         products () {
-            return this.$store.getters.availableProducts
+            return this.$store.state.products
         }
     },
 
